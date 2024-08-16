@@ -1,6 +1,8 @@
 import React from "react";
 import TextLink from "../components/elements/TextLink";
 import Button from "../components/elements/Button";
+import MovieCardHorizontal from "../components/elements/MovieCardHorizontal";
+import MovieCarousel from "../components/elements/MovieCarousel";
 const HomePage = () => {
     return (
         <div className="min-h-screen">
@@ -40,18 +42,18 @@ const HomePage = () => {
             </div>
             <div className="bg-[#181A1C] bg-cover bg-no-repeat p-10">
                 <div className="text-2xl text-white w-full mb-3">Melanjutkan Tonton Film</div>
-                    <div className="relative">
-                        <div className="absolute -left-6 top-1/2 w-fit text-gray-300 flex justify-center items-center p-2 bg-[#2F3334] rounded-full">
-                            <a href="">
-                                <img src="src\assets\arrow-left.png" alt="" />
-                            </a>
-                        </div>
-                        <div className="absolute -right-6 top-1/2 w-fit text-gray-300 flex justify-center items-center p-2 bg-[#2F3334] rounded-full">
-                            <a href="">
-                                <img src="src\assets\arrow-right.png" alt="" />
-                            </a>
-                        </div>
-                        <div className="flex w-full flex-nowrap space-x-3 mb-8">
+                <div className="relative">
+                    <div className="absolute -left-6 top-1/2 w-fit text-gray-300 flex justify-center items-center p-2 bg-[#2F3334] rounded-full">
+                        <a href="">
+                            <img src="src\assets\arrow-left.png" alt="" />
+                        </a>
+                    </div>
+                    <div className="absolute -right-6 top-1/2 w-fit text-gray-300 flex justify-center items-center p-2 bg-[#2F3334] rounded-full">
+                        <a href="">
+                            <img src="src\assets\arrow-right.png" alt="" />
+                        </a>
+                    </div>
+                    <div className="flex w-full flex-nowrap space-x-3 mb-8">
                         <a href="" className="w-full md:w-1/4 flex-shrink-0">
                             <div className="w-full h-72 md:h-40 flex items-end justify-between bg-[url('assets/vmovie1.png')] bg-center bg-contain bg-no-repeat">
                                 <div className="text-white text-xl mx-5 my-16 md:my-5">Dont Look Up</div>
@@ -78,6 +80,13 @@ const HomePage = () => {
                         </a>
                     </div>
                 </div>
+
+                <MovieCarousel>
+                    <MovieCardHorizontal imageUrl="assets/hmovie1.png" title="Dont Look Up" rating="4.5"/>
+                    <MovieCardHorizontal imageUrl="assets/hmovie2.png" title="All of Us Are Dead" rating="4.25"/>
+                    <MovieCardHorizontal imageUrl="assets/hmovie3.png" title="Blue Lock" rating="4.6"/>
+                    <MovieCardHorizontal imageUrl="assets/hmovie4.png" title="The Man Called Otto" rating="4.4"/>
+                </MovieCarousel>
                 
                 <div className="text-2xl text-white mb-3">Top Rating Film dan Series Hari ini</div>
                 <div className="relative">
