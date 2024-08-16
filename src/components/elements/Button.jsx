@@ -1,12 +1,12 @@
 import React from 'react'
 
 const Button = (props) => {
-    const { children, color, imageUrl = '' } = props;
+    const { children, color, width = 'full', href = '', imageUrl = ''} = props;
     return (
-        <button className={`flex justify-center items-center p-2 border border-gray-200 rounded-full bg-${color} w-full text-sm text-white`}>
-            {imageUrl ? <img className='w-5 h-5 me-4' src={imageUrl} alt="Google Logo"/> : ''}
+        <a href={href} className={`flex justify-center items-center p-2 border border-gray-200 rounded-full bg-${color} w-${width} text-sm text-white`}>
+            {imageUrl ? <img className='w-4 h-4 me-3' src={imageUrl} alt="Google Logo"/> : ''}
             {children}
-        </button>
+        </a>
     );
 }
 
