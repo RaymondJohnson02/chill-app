@@ -40,100 +40,149 @@ const HomePage = () => {
             </div>
             <div className="bg-[#181A1C] bg-cover bg-no-repeat p-10">
                 <div className="text-2xl text-white w-full mb-3">Melanjutkan Tonton Film</div>
-                <div className="flex w-full flex-nowrap space-x-5 mb-8">
-                    <a href="" className="w-full md:w-1/4 flex-shrink-0">
-                        <div className="w-full h-72 md:h-40 flex items-end justify-between bg-[url('assets/vmovie1.png')] bg-center bg-contain bg-no-repeat">
-                            <div className="text-white text-xl mx-5 my-16 md:my-5">Dont Look Up</div>
-                            <div className="text-white text-xl mx-5 my-16 md:my-5">4.5/5</div>
+                    <div className="relative">
+                        <div className="absolute -left-6 top-1/2 w-fit text-gray-300 flex justify-center items-center p-2 bg-[#2F3334] rounded-full">
+                            <a href="">
+                                <img src="src\assets\arrow-left.png" alt="" />
+                            </a>
                         </div>
-                    </a>
-                    <a href="" className="w-full md:w-1/4 flex-shrink-0">
-                        <div className="w-full h-72 md:h-40 flex items-end justify-between bg-[url('assets/vmovie1.png')] bg-center bg-contain bg-no-repeat">
-                            <div className="text-white text-xl mx-5 my-16 md:my-5">Dont Look Up</div>
-                            <div className="text-white text-xl mx-5 my-16 md:my-5">4.5/5</div>
+                        <div className="absolute -right-6 top-1/2 w-fit text-gray-300 flex justify-center items-center p-2 bg-[#2F3334] rounded-full">
+                            <a href="">
+                                <img src="src\assets\arrow-right.png" alt="" />
+                            </a>
                         </div>
-                    </a>
-                    <a href="" className="w-full md:w-1/4 flex-shrink-0">
-                        <div className="w-full h-72 md:h-40 flex items-end justify-between bg-[url('assets/vmovie1.png')] bg-center bg-contain bg-no-repeat">
-                            <div className="text-white text-xl mx-5 my-16 md:my-5">Dont Look Up</div>
-                            <div className="text-white text-xl mx-5 my-16 md:my-5">4.5/5</div>
-                        </div>
-                    </a>
-                    <a href="" className="w-full md:w-1/4 flex-shrink-0">
-                        <div className="w-full h-72 md:h-40 flex items-end justify-between bg-[url('assets/vmovie1.png')] bg-center bg-contain bg-no-repeat">
-                            <div className="text-white text-xl mx-5 my-16 md:my-5">Dont Look Up</div>
-                            <div className="text-white text-xl mx-5 my-16 md:my-5">4.5/5</div>
-                        </div>
-                    </a>
+                        <div className="flex w-full flex-nowrap space-x-3 mb-8">
+                        <a href="" className="w-full md:w-1/4 flex-shrink-0">
+                            <div className="w-full h-72 md:h-40 flex items-end justify-between bg-[url('assets/vmovie1.png')] bg-center bg-contain bg-no-repeat">
+                                <div className="text-white text-xl mx-5 my-16 md:my-5">Dont Look Up</div>
+                                <div className="text-white text-xl mx-5 my-16 md:my-5">4.5/5</div>
+                            </div>
+                        </a>
+                        <a href="" className="w-full md:w-1/4 flex-shrink-0">
+                            <div className="w-full h-72 md:h-40 flex items-end justify-between bg-[url('assets/vmovie1.png')] bg-center bg-contain bg-no-repeat">
+                                <div className="text-white text-xl mx-5 my-16 md:my-5">Dont Look Up</div>
+                                <div className="text-white text-xl mx-5 my-16 md:my-5">4.5/5</div>
+                            </div>
+                        </a>
+                        <a href="" className="w-full md:w-1/4 flex-shrink-0">
+                            <div className="w-full h-72 md:h-40 flex items-end justify-between bg-[url('assets/vmovie1.png')] bg-center bg-contain bg-no-repeat">
+                                <div className="text-white text-xl mx-5 my-16 md:my-5">Dont Look Up</div>
+                                <div className="text-white text-xl mx-5 my-16 md:my-5">4.5/5</div>
+                            </div>
+                        </a>
+                        <a href="" className="w-full md:w-1/4 flex-shrink-0">
+                            <div className="w-full h-72 md:h-40 flex items-end justify-between bg-[url('assets/vmovie1.png')] bg-center bg-contain bg-no-repeat">
+                                <div className="text-white text-xl mx-5 my-16 md:my-5">Dont Look Up</div>
+                                <div className="text-white text-xl mx-5 my-16 md:my-5">4.5/5</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+                
                 <div className="text-2xl text-white mb-3">Top Rating Film dan Series Hari ini</div>
-                <div className="flex w-full flex-nowrap space-x-2 mb-8">
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                <div className="relative">
+                        <div className="absolute -left-6 top-1/2 w-fit text-gray-300 flex justify-center items-center p-2 bg-[#2F3334] rounded-full">
+                            <a href="">
+                                <img src="src\assets\arrow-left.png" alt="" />
+                            </a>
                         </div>
-                    </a>
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                        <div className="absolute -right-6 top-1/2 w-fit text-gray-300 flex justify-center items-center p-2 bg-[#2F3334] rounded-full">
+                            <a href="">
+                                <img src="src\assets\arrow-right.png" alt="" />
+                            </a>
                         </div>
-                    </a>
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                        <div className="flex w-full flex-nowrap space-x-2 mb-8">
+                            <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                                <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                                </div>
+                            </a>
+                            <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                                <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                                </div>
+                            </a>
+                            <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                                <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                                </div>
+                            </a>
+                            <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                                <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                                </div>
+                            </a>
+                            <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                                <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
-                        </div>
-                    </a>
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
-                        </div>
-                    </a>
-                </div>
+                    </div>
                 <div className="text-2xl text-white">Film Trending</div>
-                <div className="flex w-full flex-nowrap space-x-2 mb-8">
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                <div className="relative">
+                        <div className="absolute -left-6 top-1/2 w-fit text-gray-300 flex justify-center items-center p-2 bg-[#2F3334] rounded-full">
+                            <a href="">
+                                <img src="src\assets\arrow-left.png" alt="" />
+                            </a>
                         </div>
-                    </a>
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                        <div className="absolute -right-6 top-1/2 w-fit text-gray-300 flex justify-center items-center p-2 bg-[#2F3334] rounded-full">
+                            <a href="">
+                                <img src="src\assets\arrow-right.png" alt="" />
+                            </a>
                         </div>
-                    </a>
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
-                        </div>
-                    </a>
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
-                        </div>
-                    </a>
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
-                        </div>
-                    </a>
+                    <div className="flex w-full flex-nowrap space-x-2 mb-8">
+                        <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                            <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                            </div>
+                        </a>
+                        <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                            <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                            </div>
+                        </a>
+                        <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                            <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                            </div>
+                        </a>
+                        <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                            <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                            </div>
+                        </a>
+                        <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                            <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div className="text-2xl text-white">Rilis Baru</div>
-                <div className="flex w-full flex-nowrap space-x-2 mb-8">
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
-                        </div>
-                    </a>
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
-                        </div>
-                    </a>
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
-                        </div>
-                    </a>
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
-                        </div>
-                    </a>
-                    <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
-                        <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
-                        </div>
-                    </a>
+                <div className="relative">
+                    <div className="absolute -left-6 top-1/2 w-fit text-gray-300 flex justify-center items-center p-2 bg-[#2F3334] rounded-full">
+                        <a href="">
+                            <img src="src\assets\arrow-left.png" alt="" />
+                        </a>
+                    </div>
+                    <div className="absolute -right-6 top-1/2 w-fit text-gray-300 flex justify-center items-center p-2 bg-[#2F3334] rounded-full">
+                        <a href="">
+                            <img src="src\assets\arrow-right.png" alt="" />
+                        </a>
+                    </div>
+                    <div className="flex w-full flex-nowrap space-x-2 mb-8">
+                        <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                            <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                            </div>
+                        </a>
+                        <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                            <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                            </div>
+                        </a>
+                        <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                            <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                            </div>
+                        </a>
+                        <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                            <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                            </div>
+                        </a>
+                        <a href="" className="w-1/3 md:w-1/5 flex-shrink-0">
+                            <div className="w-full h-72 md:h-96 flex items-end justify-between bg-[url('assets/hmovie1.png')] bg-center bg-contain bg-no-repeat">
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-center bg-[#181A1C] py-5 px-8">
