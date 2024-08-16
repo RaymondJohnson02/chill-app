@@ -4,7 +4,7 @@ import Button from "../elements/Button";
 const HomeBanner = (props) => {
     const { movieTitle, movieDescription, ageLimit, imageUrl } = props;
     return (
-        <div className={`h-80 bg-[url(${imageUrl})] md:h-screen bg-center bg-cover bg-no-repeat p-5`}>
+        <div className={`h-80 bg-[url('${imageUrl}')] md:h-screen bg-center bg-cover bg-no-repeat p-5`}>
             <div className="h-full flex flex-col justify-end w-full p-5">
                 <div className="text-3xl text-white mb-3">{movieTitle}</div>
                 <div className="text-gray-300 line-clamp-2 md:line-clamp-4 md:w-1/2">{movieDescription}</div>
