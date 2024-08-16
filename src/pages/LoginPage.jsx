@@ -4,7 +4,7 @@ import AuthLayout from "../components/layouts/AuthLayout.jsx";
 
 const LoginPage = () => {
     return (
-        <AuthLayout title="Masuk" description="Selamat Datang Kembali!">
+        <AuthLayout title="Masuk" description="Selamat Datang Kembali!" imageUrl="assets/masuk.jpeg">
             <FormLogin/>
         </AuthLayout>
     );

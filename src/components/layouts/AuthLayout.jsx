@@ -1,9 +1,9 @@
 import React, { Children } from "react";
 
 const AuthLayout = (props) => {
-    const { children, title, description } = props;
+    const { children, title, description, imageUrl } = props;
     return (
-        <div className="flex justify-center min-h-screen items-center bg-[url('assets/masuk.jpeg')] bg-center bg-cover bg-no-repeat">
+        <div className={`flex justify-center min-h-screen items-center bg-[url('${imageUrl}')] bg-center bg-cover bg-no-repeat`}>
             <div className="w-4/5 bg-[#181A1C] p-5 rounded-md md:w-1/3">
                 <div className='flex justify-center my-3'><img src="src\assets\Logo.png" alt="Chill Logo" /></div>
                 <div className="flex justify-center text-3xl text-white">{title}</div>

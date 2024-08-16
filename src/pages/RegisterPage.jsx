@@ -5,7 +5,7 @@ import FormRegister from "../components/fragments/FormRegister.jsx";
 
 const RegisterPage = () => {
     return (
-        <AuthLayout title="Daftar" description="Selamat Datang">
+        <AuthLayout title="Daftar" description="Selamat Datang" imageUrl="assets/daftar.jpeg">
             <FormRegister/>
         </AuthLayout>
     );
