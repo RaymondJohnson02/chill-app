@@ -5,11 +5,9 @@ import FormRegister from "../components/fragments/FormRegister.jsx";
 
 const RegisterPage = () => {
     return (
-        <div className="flex justify-center min-h-screen items-center bg-[url('assets/daftar.jpeg')] bg-center bg-cover bg-no-repeat">
-            <AuthLayout title="Daftar" description="Selamat Datang">
-                <FormRegister/>
-            </AuthLayout>
-        </div>
+        <AuthLayout title="Daftar" description="Selamat Datang">
+            <FormRegister/>
+        </AuthLayout>
     );
 };
 
