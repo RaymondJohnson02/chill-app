@@ -2,6 +2,7 @@ import React from "react";
 import FormGroup from "../elements/FormGroup.jsx";
 import { Link } from "react-router-dom";
 import Button from "../elements/Button.jsx";
+import GoogleLogo from "../../assets/google.png";
 
 const FormLogin = () => {
     return (
@@ -16,7 +17,7 @@ const FormLogin = () => {
             </div>
             <Button href="/home" color="gray-500">Masuk</Button>
             <div className="flex justify-center text-sm text-gray-300 my-2">Atau</div>
-            <Button color="transparent" imageUrl="src\assets\google.png">Masuk dengan Google</Button>
+            <Button color="transparent" imageUrl={GoogleLogo}>Masuk dengan Google</Button>
         </div>
         
     );
