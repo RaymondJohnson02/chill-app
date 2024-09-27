@@ -5,7 +5,7 @@ import LoginBackground from "../assets/masuk.jpeg";
 
 const LoginPage = () => {
     return (
-        <AuthLayout title="Masuk" description="Selamat Datang Kembali!" imageUrl={LoginBackground}>
+        <AuthLayout title="Masuk" description="Selamat Datang Kembali!" imageUrl="/images/masuk.jpeg">
             <FormLogin/>
         </AuthLayout>
     );

@@ -6,7 +6,7 @@ import RegisterBackground from "../assets/daftar.jpeg";
 
 const RegisterPage = () => {
     return (
-        <AuthLayout title="Daftar" description="Selamat Datang" imageUrl={RegisterBackground}>
+        <AuthLayout title="Daftar" description="Selamat Datang" imageUrl="images/daftar.jpeg">
             <FormRegister/>
         </AuthLayout>
     );

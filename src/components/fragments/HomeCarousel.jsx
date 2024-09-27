@@ -26,7 +26,7 @@ const HomeCarousel = () => {
                 <div className="text-2xl text-white w-full mb-3">Melanjutkan Tonton Film</div>
                 
                 <MovieCarousel>
-                    <MovieCardHorizontal imageUrl={HMovie1} title="Dont Look Up" rating="4.5"/>
+                    <MovieCardHorizontal imageUrl="/images/hmovie1.png" title="Dont Look Up" rating="4.5"/>
                     <MovieCardHorizontal imageUrl={HMovie2} title="All of Us Are Dead" rating="4.25"/>
                     <MovieCardHorizontal imageUrl={HMovie3} title="Blue Lock" rating="4.6"/>
                     <MovieCardHorizontal imageUrl={HMovie4} title="The Man Called Otto" rating="4.4"/>
