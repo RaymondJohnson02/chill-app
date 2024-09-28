@@ -16,7 +16,7 @@ const FormRegister = () => {
             </div>
             <Button href="/login" color="gray-500">Daftar</Button>
             <div className="flex justify-center text-sm text-gray-300 my-2">Atau</div>
-            <Button color="transparent" imageUrl="images/google.png">Daftar dengan Google</Button>
+            <Button color="transparent" imageUrl="/images/google.png">Daftar dengan Google</Button>
         </div>
         
     );
