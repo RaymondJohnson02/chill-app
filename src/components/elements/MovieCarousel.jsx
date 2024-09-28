@@ -14,7 +14,7 @@ const MovieCarousel = (props) => {
                     <img src="/images/arrow-right.png" alt="" />
                 </a>
             </div>
-            <div className="flex w-full flex-nowrap space-x-3 mb-8">
+            <div className="flex w-full flex-nowrap space-x-3 mb-8 overflow-hidden">
                 {children}
             </div>
         </div>

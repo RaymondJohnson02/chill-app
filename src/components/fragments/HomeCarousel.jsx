@@ -60,7 +60,13 @@ const topMoviesSeries = [
         imageUrl: "/images/vmovie4.png",
         title: "All of us are dead",
         rating: "4.4"
-    }
+    },
+    {
+        id: 5,
+        imageUrl: "/images/vmovie5.png",
+        title: "Big hero 6",
+        rating: "4.6"
+    },
 ]
 
 const trendings = [
@@ -135,30 +141,30 @@ const HomeCarousel = () => {
                 <div className="text-2xl text-white w-full mb-3">Melanjutkan Tonton Film</div>
                 
                 <MovieCarousel>
-                    {watchedMovies.map((movie) => {
+                    {watchedMovies.map((movie) => (
                         <MovieCardHorizontal imageUrl={movie.imageUrl} title={movie.title} rating={movie.rating}/>
-                    })}
+                    ))}
                 </MovieCarousel>
                 
                 <div className="text-2xl text-white mb-3">Top Rating Film dan Series Hari ini</div>
                 <MovieCarousel>
-                    {topMoviesSeries.map((movie) => {
+                    {topMoviesSeries.map((movie) => (
                         <MovieCardVertical imageUrl={movie.imageUrl} title={movie.title} rating={movie.rating}/>
-                    })}
+                    ))}
                 </MovieCarousel>
                 
                 <div className="text-2xl text-white">Film Trending</div>
                 <MovieCarousel>
-                    {trendings.map((movie) => {
+                    {trendings.map((movie) => (
                         <MovieCardVertical imageUrl={movie.imageUrl} title={movie.title} rating={movie.rating}/>
-                    })}
+                    ))}
                 </MovieCarousel>
 
                 <div className="text-2xl text-white">Rilis Baru</div>
                 <MovieCarousel>
-                    {newReleases.map((movie) => {
-                        <MovieCardHorizontal imageUrl={movie.imageUrl} title={movie.title} rating={movie.rating}/>
-                    })}
+                    {newReleases.map((movie) => (
+                        <MovieCardVertical imageUrl={movie.imageUrl} title={movie.title} rating={movie.rating}/>
+                    ))}
                 </MovieCarousel>
             </div>
     )

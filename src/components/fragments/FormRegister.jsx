@@ -14,9 +14,9 @@ const FormRegister = () => {
             <div className="flex justify-between mb-6">
                 <div className='text-gray-300 text-sm'>Sudah punya akun?<Link className='text-white' to="/login">Masuk</Link></div>
             </div>
-            <Button href="/login" color="gray-500">Daftar</Button>
+            <Button href="/login" bgColor="bg-gray-500">Daftar</Button>
             <div className="flex justify-center text-sm text-gray-300 my-2">Atau</div>
-            <Button color="transparent" imageUrl="/images/google.png">Daftar dengan Google</Button>
+            <Button bgColor="bg-transparent" imageUrl="/images/google.png">Daftar dengan Google</Button>
         </div>
         
     );

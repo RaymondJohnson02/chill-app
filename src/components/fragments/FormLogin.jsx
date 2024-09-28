@@ -14,9 +14,9 @@ const FormLogin = () => {
                 <div className='text-gray-300 text-sm'>Belum punya akun?<Link className='text-white' to="/register">Daftar</Link></div>
                 <a className='text-white text-sm' href="">Lupa kata sandi?</a>
             </div>
-            <Button href="/home" color="gray-500">Masuk</Button>
+            <Button href="/home" bgColor="bg-gray-500">Masuk</Button>
             <div className="flex justify-center text-sm text-gray-300 my-2">Atau</div>
-            <Button color="transparent" imageUrl="/images/google.png">Masuk dengan Google</Button>
+            <Button bgColor="bg-transparent" imageUrl="/images/google.png">Masuk dengan Google</Button>
         </div>
         
     );
