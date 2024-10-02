@@ -1,19 +1,27 @@
 import React from "react";
 
 const MovieCardHorizontal = (props) => {
-    const { imageUrl, title, rating } = props;
+    const { imageUrl, title, rating, favorite = false, onAddToMyList, onRemoveFromMyList, onPlay } = props;
     return(
-        <a href="" className="w-full md:w-1/4 flex-shrink-0">
-            <div className={`group/hmovie w-full h-72 md:h-40 flex flex-row bg-center bg-contain bg-no-repeat`} style={{backgroundImage: `url(${imageUrl})`}}>
+        <div className="w-full md:w-1/4 flex-shrink-0">
+            <div className={`group w-full h-72 md:h-40 flex flex-row bg-center bg-contain bg-no-repeat`} style={{backgroundImage: `url(${imageUrl})`}}>
                 <div className="w-full h-full relative">
-                    <div className="w-full h-full absolute invisible group-hover/hmovie:visible transition duration-150">
-                        <div className="w-full h-full flex justify-center items-center bg-black bg-opacity-50 ">
+                    <div className="w-full h-full absolute z-10 invisible group-hover:visible transition duration-150">
+                        <div className="w-full h-full flex justify-center items-center bg-black bg-opacity-50 rounded-md">
                             <div>
-                                <img src="/images/play-circle.png" alt="" />
+                            <button type="button" onClick={() => onPlay}><img src="/images/play-circle.png" alt="" /></button>
                             </div>
-                            <div>
-                                <img src="/images/add-movie.png" alt="" />
-                            </div>
+                            {
+                                (favorite) ? (
+                                    <div>
+                                        <button type="button" onClick={() => onRemoveFromMyList()}><img src="/images/movie-added.png" className="w-12 h-12" alt="" /></button>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <button type="button" onClick={() => onAddToMyList()}><img src="/images/add-movie.png" className="w-12 h-12" alt="" /></button>
+                                    </div>
+                                )
+                            }
                         </div>
                     </div>
                     <div className="w-full h-full absolute">
@@ -24,7 +32,7 @@ const MovieCardHorizontal = (props) => {
                     </div>
                 </div>
             </div>
-        </a>
+        </div>
     )
 }
 

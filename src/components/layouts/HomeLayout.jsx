@@ -1,17 +1,19 @@
 import React from "react";
 import TextLink from "../elements/TextLink.jsx";
+import { useMovies } from "../context/Movie.jsx";
 
 const HomeLayout = (props) => {
     const { children } = props;
+    const { myMovieList, addToMyList} = useMovies();
     return (
         <div className="min-h-screen">
             <div className="flex justify-between items-center bg-[#181A1C] text-gray-300 p-4 md:p-5">
                 <div className="w-1/2 flex items-center">
-                    <img className="hidden w-20 mx-5 md:block" src="/images/Logo.png" alt="Logo Chill" />
-                    <img className="w-15 mx-5 md:hidden" src="/images/movie-open.png" alt="Logo Chill" />
-                    <a className="text-sm me-5 md:ms-5" href="#">Series</a>
-                    <a className="text-sm me-5 md:ms-5" href="#">Film</a>
-                    <a className="text-sm me-5 md:ms-5" href="#">Daftar Saya</a>
+                    <a href="/Home"><img className="hidden w-20 mx-5 md:block" src="/images/Logo.png" alt="Logo Chill" /></a>
+                    <a href="/Home"><img className="w-15 mx-5 md:hidden" src="/images/movie-open.png" alt="Logo Chill" /></a>
+                    <a className="text-sm me-5 md:ms-5" href="/Home">Series</a>
+                    <a className="text-sm me-5 md:ms-5" href="/Home">Film</a>
+                    <a className="text-sm me-5 md:ms-5" href="/MyList">Daftar Saya</a>
                 </div>
                 
                 <div className="w-1/4 flex justify-end">
