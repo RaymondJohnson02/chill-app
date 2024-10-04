@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiUrl = import.meta.env.VITE_API_URL;
+const apiUrl = "https://66fd1831c3a184a84d190eaa.mockapi.io/api";
 export const getUserMovies = async () => {
     try {
         const response = await axios.get(`${apiUrl}/usermovies`);
