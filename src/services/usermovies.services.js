@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiUrl = "https://66fd1831c3a184a84d190eaa.mockapi.io/api";
+const apiUrl = process.env.REACT_APP_API_URL;
 export const getUserMovies = async () => {
     try {
         const response = await axios.get(`${apiUrl}/usermovies`);
