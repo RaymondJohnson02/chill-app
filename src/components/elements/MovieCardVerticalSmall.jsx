@@ -3,7 +3,7 @@ import React from "react";
 const MovieCardVerticalSmall = (props) => {
     const { imageUrl, onRemoveFromMyList } = props;
     return(
-        <a href="" className="w-1/3 md:w-1/6 flex-shrink-0 mb-2">
+        <div className="w-1/3 md:w-1/6 flex-shrink-0 mb-2">
             <div className={`group/vmovie w-full h-72 md:h-84 flex items-end justify-between bg-center bg-contain bg-no-repeat`} style={{backgroundImage: `url(${imageUrl})`}}>
                 <div className="w-full h-full relative">
                     <div className="w-full h-full absolute invisible group-hover/vmovie:visible transition duration-150">
@@ -18,7 +18,7 @@ const MovieCardVerticalSmall = (props) => {
                     </div>
                 </div>
             </div>
-        </a>
+        </div>
     )
 }
 

@@ -4,7 +4,7 @@ const MovieCardHorizontal = (props) => {
     const { imageUrl, title, rating, favorite = false, onAddToMyList, onRemoveFromMyList, onPlay } = props;
     return(
         <div className="w-full md:w-1/4 flex-shrink-0">
-            <div className={`group w-full h-72 md:h-40 flex flex-row bg-center bg-contain bg-no-repeat`} style={{backgroundImage: `url(${imageUrl})`}}>
+            <div className={`group w-full h-72 md:h-48 flex flex-row bg-center bg-contain bg-no-repeat`} style={{backgroundImage: `url(${imageUrl})`}}>
                 <div className="w-full h-full relative">
                     <div className="w-full h-full absolute z-10 invisible group-hover:visible transition duration-150">
                         <div className="w-full h-full flex justify-center items-center bg-black bg-opacity-50 rounded-md">
