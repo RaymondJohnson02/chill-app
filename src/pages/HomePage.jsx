@@ -1,20 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HomeLayout from "../components/layouts/HomeLayout";
 import HomeBanner from "../components/fragments/HomeBanner";
 import MovieCarousel from "../components/elements/MovieCarousel";
 import MovieCardHorizontal from "../components/elements/MovieCardHorizontal";
 import MovieCardVertical from "../components/elements/MovieCardVertical";
 import { useMovies } from "../components/context/Movie";
+import {getMovies} from "../services/movies.services";
+import LoadingPage from "./LoadingPage";
 
 const HomePage = () => {
-    const { myMovies, addToMyList, removeFromMyList } = useMovies();
+
+    const [ movieList, setMovieList ] = useState([]);
+    const [ loading, setLoading ] = useState(true);
+    const { myMovies, myListLoading, addToMyList, removeFromMyList } = useMovies();
+
+    useEffect(() => {
+        getMovies().then((response) => {
+            setMovieList(response);
+        }).finally(() => {
+            setLoading(false);
+        })
+    }, []);
 
     const handleAddMyList = (index) => {
-        addToMyList(index);
+        let movie = movieList[index];
+        let data = {
+            userId: 1,
+            movieId: movie.id,
+            watched: false
+        }
+
+        let movieAdded = myMovies.find((m) => m.movieId === movie.id && m.userId === 1);
+        if(movieAdded) {
+            console.log("Already added");
+            return;
+        }else{
+            addToMyList(data);
+        }
     }
 
     const handleRemoveFromMyList = (index) => {
-        removeFromMyList(index);
+        let movie = movieList[index];
+        let movieToBeDeleted = myMovies.find((m) => m.movieId === movie.id && m.userId === 1);
+        if(movieToBeDeleted) {
+            removeFromMyList(movieToBeDeleted.id);
+        }else{
+            console.log("This movie is not in my list");
+            return;
+        }
+    }
+
+    if(loading || myListLoading) {
+        return (
+            <LoadingPage/>
+        )
     }
 
     return (
@@ -29,38 +68,43 @@ const HomePage = () => {
                 <div className="text-2xl text-white w-full mb-3">Melanjutkan Tonton Film</div>
                 
                 <MovieCarousel>
-                    {myMovies.map((movie, index) => (
-                        (movie.watched) && (
-                            <MovieCardHorizontal key={movie.id} imageUrl={movie.himageUrl} title={movie.title} rating={movie.rating} favorite={movie.favorite} onAddToMyList={() => handleAddMyList(index)} onRemoveFromMyList={() => handleRemoveFromMyList(index)} />
+                    {movieList.map((movie, index) => {
+                        const isOnMyList = myMovies.find((myMovie) => myMovie.movieId == movie.id) != undefined;
+                        return (
+                            <MovieCardHorizontal key={movie.id} imageUrl={movie.himageUrl} title={movie.title} rating={movie.rating} favorite={isOnMyList} onAddToMyList={() => handleAddMyList(index)} onRemoveFromMyList={() => handleRemoveFromMyList(index)} />
                         )
-                    ))}
+                    
+                    })}
                 </MovieCarousel>
                 
                 <div className="text-2xl text-white mb-3">Top Rating Film dan Series Hari ini</div>
                 <MovieCarousel>
-                    {myMovies.map((movie, index) => (
-                        (movie.rating >= 4.5) && (
-                            <MovieCardVertical key={movie.id} imageUrl={movie.vimageUrl} title={movie.title} rating={movie.rating} favorite={movie.favorite} onAddToMyList={() => handleAddMyList(index)} onRemoveFromMyList={() => handleRemoveFromMyList(index)}/>
+                    {movieList.map((movie, index) => {
+                        const isOnMyList = myMovies.find((myMovie) => myMovie.movieId == movie.id) != undefined;
+                        return (movie.rating >= 4.5) && (
+                            <MovieCardVertical key={movie.id} imageUrl={movie.vimageUrl} title={movie.title} rating={movie.rating} favorite={isOnMyList} onAddToMyList={() => handleAddMyList(index)} onRemoveFromMyList={() => handleRemoveFromMyList(index)}/>
                         )
-                    ))}
+                    })}
                 </MovieCarousel>
                 
                 <div className="text-2xl text-white">Film Trending</div>
                 <MovieCarousel>
-                    {myMovies.map((movie, index) => (
-                        (movie.trending) && (
-                            <MovieCardVertical key={movie.id} imageUrl={movie.vimageUrl} title={movie.title} rating={movie.rating} favorite={movie.favorite} onAddToMyList={() => handleAddMyList(index)} onRemoveFromMyList={() => handleRemoveFromMyList(index)}/>
+                    {movieList.map((movie, index) => {
+                        const isOnMyList = myMovies.find((myMovie) => myMovie.movieId == movie.id) != undefined;
+                        return (movie.trending) && (
+                            <MovieCardVertical key={movie.id} imageUrl={movie.vimageUrl} title={movie.title} rating={movie.rating} favorite={isOnMyList} onAddToMyList={() => handleAddMyList(index)} onRemoveFromMyList={() => handleRemoveFromMyList(index)}/>
                         )
-                    ))}
+                    })}
                 </MovieCarousel>
 
                 <div className="text-2xl text-white">Rilis Baru</div>
                 <MovieCarousel>
-                    {myMovies.map((movie, index) => (
-                        (movie.release >= 2024) && (
-                            <MovieCardVertical key={movie.id} imageUrl={movie.vimageUrl} title={movie.title} rating={movie.rating} favorite={movie.favorite} onAddToMyList={() => handleAddMyList(index)} onRemoveFromMyList={() => handleRemoveFromMyList(index)}/>
+                    {movieList.map((movie, index) => {
+                        const isOnMyList = myMovies.find((myMovie) => myMovie.movieId == movie.id) != undefined;
+                        return (movie.release >= 2024) && (
+                            <MovieCardVertical key={movie.id} imageUrl={movie.vimageUrl} title={movie.title} rating={movie.rating} favorite={isOnMyList} onAddToMyList={() => handleAddMyList(index)} onRemoveFromMyList={() => handleRemoveFromMyList(index)}/>
                         )
-                    ))}
+                    })}
                 </MovieCarousel>
             </div>
         </HomeLayout>
