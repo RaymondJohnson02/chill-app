@@ -6,7 +6,8 @@ import RegisterPage from './pages/RegisterPage.jsx'
 import HomePage from './pages/HomePage.jsx'
 import MyListPage from './pages/MyListPage.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { MovieContextProvider } from './components/context/Movie.jsx'
+import { Provider } from 'react-redux'
+import store from './store/redux/store.js'
 
 const router = createBrowserRouter([
   {
@@ -33,8 +34,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <MovieContextProvider>
-      <RouterProvider router={router}/>
-    </MovieContextProvider>
+    <Provider store={store}>
+        <RouterProvider router={router}/>
+    </Provider>
   </StrictMode>,
 )

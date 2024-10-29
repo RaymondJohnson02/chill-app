@@ -4,19 +4,26 @@ import HomeBanner from "../components/fragments/HomeBanner";
 import MovieCarousel from "../components/elements/MovieCarousel";
 import MovieCardHorizontal from "../components/elements/MovieCardHorizontal";
 import MovieCardVertical from "../components/elements/MovieCardVertical";
-import { useMovies } from "../components/context/Movie";
 import {getMovies} from "../services/movies.services";
 import LoadingPage from "./LoadingPage";
+import { useDispatch, useSelector } from "react-redux";
+import { setMyMovies, addToMyMovies, removeFromMyMovies } from "../store/redux/slices/myMovieSlice";
+import { getUserMovies, addUserMovies, deleteUserMovies } from "../services/usermovies.services";
 
 const HomePage = () => {
-
+    const dispatch = useDispatch();
     const [ movieList, setMovieList ] = useState([]);
     const [ loading, setLoading ] = useState(true);
-    const { myMovies, myListLoading, addToMyList, removeFromMyList } = useMovies();
+    const myMovies = useSelector((state) => state.myMovie.data);
 
     useEffect(() => {
         getMovies().then((response) => {
             setMovieList(response);
+        });
+
+        getUserMovies().then((response) => {
+            console.log("setMyMovies", response);
+            dispatch(setMyMovies(response));
         }).finally(() => {
             setLoading(false);
         })
@@ -32,25 +39,39 @@ const HomePage = () => {
 
         let movieAdded = myMovies.find((m) => m.movieId === movie.id && m.userId === 1);
         if(movieAdded) {
-            console.log("Already added");
+            alert("Already added");
             return;
-        }else{
-            addToMyList(data);
         }
+
+        addUserMovies(data).then((response) => {
+            if(response.status === 201) {
+                alert("Add to my list success");
+                dispatch(addToMyMovies(data));
+            } else {
+                alert("Add to my list failed");
+            }
+        });
+        
     }
 
     const handleRemoveFromMyList = (index) => {
         let movie = movieList[index];
         let movieToBeDeleted = myMovies.find((m) => m.movieId === movie.id && m.userId === 1);
-        if(movieToBeDeleted) {
-            removeFromMyList(movieToBeDeleted.id);
-        }else{
+        if(!movieToBeDeleted) {
             console.log("This movie is not in my list");
             return;
         }
+        deleteUserMovies(movieToBeDeleted.id).then((response) => {
+            if(response.status !== 200) {
+                alert("Delete from my list failed");
+            }else{
+                alert("Delete from my list success");
+                dispatch(removeFromMyMovies(movieToBeDeleted.id));
+            }
+        });
     }
 
-    if(loading || myListLoading) {
+    if(loading) {
         return (
             <LoadingPage/>
         )

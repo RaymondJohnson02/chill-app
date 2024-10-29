@@ -1,10 +1,8 @@
 import React from "react";
 import TextLink from "../elements/TextLink.jsx";
-import { useMovies } from "../context/Movie.jsx";
 
 const HomeLayout = (props) => {
     const { children } = props;
-    const { myMovieList, addToMyList} = useMovies();
     return (
         <div className="min-h-screen">
             <div className="flex justify-between items-center bg-[#181A1C] text-gray-300 p-4 md:p-5">

@@ -9,7 +9,7 @@ export const useMovies = () => useContext(MovieContext);
 export const MovieContextProvider = ({ children }) => {
 
     const [myMovies, setMyMovies] = useState([]);
-    const [myListLoading, setMyListLoading] = useState(true);
+    const [setMyListLoading] = useState(true);
 
     useEffect(() => {
         getUserMovies().then((response) => {

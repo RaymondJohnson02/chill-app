@@ -2,28 +2,43 @@ import React from "react";
 import { useState, useEffect } from "react";
 import HomeLayout from "../components/layouts/HomeLayout";
 import MovieCardVerticalSmall from "../components/elements/MovieCardVerticalSmall";
-import { useMovies } from "../components/context/Movie";
 import { getMovies } from "../services/movies.services";
 import LoadingPage from "./LoadingPage";
+import { useDispatch, useSelector } from "react-redux";
+import { setMyMovies, removeFromMyMovies } from "../store/redux/slices/myMovieSlice";
+import { getUserMovies, deleteUserMovies } from "../services/usermovies.services";
 
 const MyListPage = () => {
+
     const [ movieList, setMovieList ] = useState([]);
     const [ loading, setLoading ] = useState(true);
-    const { myMovies, myListLoading, removeFromMyList } = useMovies();
+    const dispatch = useDispatch();
+    const myMovies = useSelector((state) => state.myMovie.data);
 
     useEffect(() => {
         getMovies().then((response) => {
             setMovieList(response);
+        });
+
+        getUserMovies().then((response) => {
+            dispatch(setMyMovies(response));
         }).finally(() => {
             setLoading(false);
-        })
+        });
     }, []);
 
     const handleRemoveFromMyList = (id) => {
-        removeFromMyList(id);
+        deleteUserMovies(id).then((response) => {
+            if(response.status === 200) {
+                dispatch(removeFromMyMovies(id));
+                console.log("Delete from my list success");
+            } else {
+                console.log("Delete from my list failed");
+            }
+        });
     }
 
-    if(loading || myListLoading) {
+    if(loading) {
         return (
             <LoadingPage/>
         )
