@@ -18,14 +18,18 @@ const MyListPage = () => {
     useEffect(() => {
         getMovies().then((response) => {
             setMovieList(response);
+        }).finally(() => {
+            setLoading(false);
         });
+
+        setLoading(true);
 
         getUserMovies().then((response) => {
             dispatch(setMyMovies(response));
         }).finally(() => {
             setLoading(false);
         });
-    }, []);
+    }, [dispatch]);
 
     const handleRemoveFromMyList = (id) => {
         deleteUserMovies(id).then((response) => {
@@ -51,9 +55,9 @@ const MyListPage = () => {
                     <div className="text-3xl text-white mb-8">Daftar Saya</div>
                     <div className="flex w-full flex-wrap mb-8">
                         {myMovies.map((usermovie, index) => {
-                            const movie = movieList.find((m) => m.id === usermovie.movieId);
+                            const movie = movieList.find((movie) => movie.id === usermovie.movieId);
                             return (
-                                <MovieCardVerticalSmall imageUrl={movie.vimageUrl} title={movie.title} rating={movie.rating} key={movie.id} onRemoveFromMyList={() => handleRemoveFromMyList(usermovie.id)}/>
+                                <MovieCardVerticalSmall title={movie.title} imageUrl={movie.vimageUrl}  rating={movie.rating} key={movie.id} onRemoveFromMyList={() => handleRemoveFromMyList(usermovie.id)}/>
                             )
                         })}
                     </div>

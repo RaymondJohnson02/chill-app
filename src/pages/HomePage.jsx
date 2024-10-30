@@ -19,7 +19,11 @@ const HomePage = () => {
     useEffect(() => {
         getMovies().then((response) => {
             setMovieList(response);
+        }).finally(() => {
+            setLoading(false);
         });
+
+        setLoading(true);
 
         getUserMovies().then((response) => {
             console.log("setMyMovies", response);
