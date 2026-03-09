@@ -1,65 +1,56 @@
-import Image from "next/image";
+import { Header } from "@/components/header"
+import { HeroBanner } from "@/components/hero-banner"
+import { NowShowingCarousel } from "@/components/now-showing-carousel"
+import { ComingSoonCard } from "@/components/coming-soon-card"
+import { Footer } from "@/components/footer"
+
+const comingSoonMovies = [
+  {
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDwqdxKVF4dXW1H6t0ylU8m1-Jp3OAueNo1VJ8G3KLPPV5QTcuzR_YdKbOroDkgoZ3jRsLPZZm1xoOG-uOho-uF_9Nsz4R6_mlW0-G0BN0O7bq3NGmbrCxeJkIWRCaHoVoyOMMy3NRv3k55XcJxcXgiYa7QPyRZz7uCbXRcSR1PuthCjws02gzT5C7glIQcyZlFXqzDgFDTwJRiIPvTIPlAH2ZMXP81jkQccudxyFDaM8YG1IDqaTxLx-1eTyAZ3R5DPxULdZQGlrU",
+    title: "Neon City Dreams",
+    genre: "Animation, Music",
+    releaseDate: "June 15, 2024",
+  },
+  {
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCS65u-FNv4grLmM8x099_nadNUd6Cw2iJMve8TlJJQzzxHgKy77zGZ-lp50F2uM6eUCLoRj3IcfzVL7Gt24aNPrtDxiSMEFtd3A2OX2bV2GVzxZDoFd9dLAyVaEdeIH8uQ0EztkKp3454oookHLh5DrDfKNsCPVVLu_6SiwYvoOz14Qn9yhCeZxyhPBeoisLfklDnUW26v76v9EtF7oreg0HPuIniw-iR5hQLC17hlSGC2-RBjMmWZ_tcjd_EU7v2IJr-9T-9UAJo",
+    title: "The Last Dynasty",
+    genre: "History, Epic",
+    releaseDate: "June 22, 2024",
+  },
+  {
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCf8H4uY04APn7jsKfdarxsWGiP_6Thaz1ZZ49hXoyoT0Ux4kxKPchWV3f1dIGBLuA2AZ7TkAxBHjtXjPWmUzM62YOitL3E4_Zt4LnwvYyTu2JSFQgLGAspEDafX07f967b8Qf2XxW0B5XxSgm2650NxoWOqltiXU-XmK_oGkO4uQQ_c_EK7tycYyiwebokLw5neWcE3CvoNbgdSCta4o0OOUqICgr5TQi6eXs1AM23zz7oZJkw9LYXGM_CvbfNZ2VuiuSWPRHkypg",
+    title: "Infinite Void",
+    genre: "Sci-Fi, Thriller",
+    releaseDate: "July 05, 2024",
+  },
+]
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <Header />
+
+      <main className="flex-1">
+        <HeroBanner />
+        <NowShowingCarousel />
+
+        {/* Coming Soon */}
+        <section className="mx-auto max-w-7xl px-6 py-12">
+          <div className="mb-8 flex items-center justify-between">
+            <h3 className="text-2xl font-bold tracking-tight">Coming Soon</h3>
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {comingSoonMovies.map((movie) => (
+              <ComingSoonCard key={movie.title} {...movie} />
+            ))}
+          </div>
+        </section>
       </main>
+
+      <Footer />
     </div>
-  );
+  )
 }
