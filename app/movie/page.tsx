@@ -1,7 +1,16 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel"
 import { Heart, Star, CalendarDays, MapPin, Film } from "lucide-react"
 
 const cast = [
@@ -44,6 +53,7 @@ const similarMovies = [
     title: "Interstellar",
     genre: "Sci-Fi",
     year: "2014",
+    rating: "8.7",
   },
   {
     imageSrc:
@@ -51,6 +61,7 @@ const similarMovies = [
     title: "Tenet",
     genre: "Action",
     year: "2020",
+    rating: "7.3",
   },
   {
     imageSrc:
@@ -58,6 +69,7 @@ const similarMovies = [
     title: "Memento",
     genre: "Mystery",
     year: "2000",
+    rating: "8.4",
   },
   {
     imageSrc:
@@ -65,6 +77,7 @@ const similarMovies = [
     title: "Dunkirk",
     genre: "War",
     year: "2017",
+    rating: "7.8",
   },
   {
     imageSrc:
@@ -72,6 +85,47 @@ const similarMovies = [
     title: "The Prestige",
     genre: "Drama",
     year: "2006",
+    rating: "8.5",
+  },
+  {
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCl2GwW2Wq4tfjTAIqW5Y_ePGvTAUCVBaz-sDe1yFTvKGRzcuJHLL1hytf5z4Mp5QRC4ngc3BlbWR2MceZzb7nhOBa0DpIKvquYhTbUvl8AkHiGd0O-y69MNIwTDPClv5dorntHDizVgv1dF1PJo4bwtkJ9jdrfzJ1w04EI4NUrQpBCAbpZMJ05LdN9UUkiH5D4PXxOFS6BTZ30sBzhzFe9vHVkqxMP6IVjUI32b2UhoWfqKYxSXyD5nVqBA9Kiijj9BddG9F58x3M",
+    title: "The Dark Knight",
+    genre: "Action",
+    year: "2008",
+    rating: "9.0",
+  },
+  {
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAhIaDcvUTYhUA5JRyNG2H7zLVzh0u111sRNf91VxuX0haM6I2PUmM5RI4B_p9_vAe5LCFITMlSPfW8h2_vN3DhY9s3hofvRWMEduVVP9NGwO2-PaIjH3tpCfAHIULOY1sV8KL1vi6hLp5JbE_jdNY-fr1vq1-LbPhh_Elu_CLbCNUNRJQEDIhGFEzywUV3OFIb8IEIrYMNKO9r7pI_R11h3SInq43OkQ90OrrfDvrJNrFQhjF5lPlSRx7ity3pCElyAej7jkV1XoQ",
+    title: "Shutter Island",
+    genre: "Thriller",
+    year: "2010",
+    rating: "8.2",
+  },
+  {
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDeSnhSIxae0UKlVXlGr5SRPPL9ACfbPUxetjN80U1e62TEdigM2SU83WE6kPyaiLi1wTahQ5YtjcgG0jQGRyNHyx4W8BRKqjDidnPh2lvpdG-y_XpS6Ga4O4rCVmSm9K4RTVeF3IGx2208GeQQ_7MDpG0fGT0FkcFhM00vmBarZNgbrAqhPJo8yun8p2dobok59YRlnP5uZkk8r-5d3ZsiuKpD4FM5TmzEbEHNC5FB2g1qS8YJl8a4CRguGSWHglCc66-5n8RWTco",
+    title: "Fight Club",
+    genre: "Drama",
+    year: "1999",
+    rating: "8.8",
+  },
+  {
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuB_oKlREBCTiwEc_0idS8j50gQ4r8kgAUGLtpn1NTW9rtY6Z1tWYzK8oLfGRbmNEYhYkg0xxv7oQ_7h6fT4KI91Qu_HDGUAGz9Uj4nrcua4ra4M_rbbglab6L3AGAjtt-uU2S9zVUICPZSIIhF3XRT1AS7jdKZLKX-EaG1H2EeV2E24Tbz_4WRVF5BaBYKDeDds6QbaPjxd3wVWDF4v1vic3IllHsK2on0ZO9dUxbgdQYOvUYvgTlSwdctz6YKlZ3B4UQVdT22VLXw",
+    title: "The Matrix",
+    genre: "Sci-Fi",
+    year: "1999",
+    rating: "8.7",
+  },
+  {
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuC7OydbBqQ1VUx1qFUwce8_59U3Tx6KAccEEL2vsyxwZr33zoBhBXUx9vrMYosuSKYqfHWKElJG8Js6ZSkU9HKad-IIqJaxGJaMcj4ctACZCusljQBK80TIQE0-wJ1DFsDuNiJyk4Hlirt9VQcuUKhCUWACYe5nKa5zJyeFpnbQyVMIJdxAonI0IWUtuy_j0fB6m6ZEcbenEV1uohpwL6xMiYgH1TNlZVB5CuNLHsVQNjgka89hpuuoM94l-eR-wNamfAJLZGrKXzA",
+    title: "Blade Runner 2049",
+    genre: "Sci-Fi",
+    year: "2017",
+    rating: "8.0",
   },
 ]
 
@@ -82,23 +136,16 @@ export default function MovieDetailPage() {
 
       <main className="flex-1">
         {/* ── Hero ── */}
-        {/* Reduced to ~40vh so the backdrop is notably smaller */}
         <div className="relative h-[40vh] w-full overflow-hidden">
-          {/* gradient fades hero into page background */}
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-background/30 to-transparent" />
-
-          {/* backdrop image */}
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuAElh1-zSTYTUViMrq-vmsEOKpHeOl1a5yWSS5CAl4n33JLDWIK2dCiNiVsBOIDZplI1S6NmYDPJksmU8QCTAMP1BrWGwGyr5_ddgFGMuBHV5gfCMysYQbOdKwtCYq5Y5RqOSBNHdsfz7fX6XwxqwQocuzznUEhNj1Eu91MV_X4maja7F03ocB7E4pDAg7Mhad69ZlzrnNAfkkVtGVVcXzNPSDFRGgR2BImtYsQlkkR-KQFMKHF6U-u9EmIX1PpvleX2sfW57RCf0g')`,
             }}
           />
-
-          {/* movie info anchored to bottom */}
           <div className="relative z-20 flex h-full items-end px-6 pb-8 md:px-20">
             <div className="flex flex-col gap-4 md:flex-row md:items-end">
-              {/* poster */}
               <div className="hidden md:block w-40 flex-shrink-0 overflow-hidden rounded-xl border-4 border-white shadow-2xl shadow-red-500/20">
                 <img
                   className="aspect-[2/3] w-full object-cover"
@@ -106,8 +153,6 @@ export default function MovieDetailPage() {
                   alt="Inception poster"
                 />
               </div>
-
-              {/* title block */}
               <div className="flex flex-col gap-2">
                 <div className="flex flex-wrap gap-2">
                   <Badge className="border-none bg-red-500 text-xs font-bold uppercase tracking-wider text-white">
@@ -258,32 +303,56 @@ export default function MovieDetailPage() {
           </div>
         </div>
 
-        {/* ── Similar Movies ── */}
+        {/* ── Similar Movies Carousel ── */}
         <section className="bg-red-500/5 px-6 py-16 md:px-20">
           <div className="mx-auto max-w-7xl">
-            <h3 className="mb-8 text-2xl font-bold">You May Also Like</h3>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5">
-              {similarMovies.map((movie) => (
-                <div
-                  key={movie.title}
-                  className="group flex cursor-pointer flex-col gap-2"
-                >
-                  <div className="relative aspect-[2/3] overflow-hidden rounded-xl bg-muted">
-                    <img
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src={movie.imageSrc}
-                      alt={movie.title}
-                    />
-                  </div>
-                  <p className="truncate font-bold transition-colors group-hover:text-red-500">
-                    {movie.title}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {movie.genre} • {movie.year}
-                  </p>
-                </div>
-              ))}
+            <div className="mb-8 flex items-center justify-between">
+              <h3 className="text-2xl font-bold">You May Also Like</h3>
             </div>
+
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {similarMovies.map((movie, index) => (
+                  <CarouselItem
+                    key={`${movie.title}-${index}`}
+                    className="basis-1/2 pl-4 md:basis-1/3 lg:basis-1/5"
+                  >
+                    <div className="group flex cursor-pointer flex-col gap-2">
+                      <div className="relative aspect-[2/3] overflow-hidden rounded-xl bg-muted">
+                        <img
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          src={movie.imageSrc}
+                          alt={movie.title}
+                        />
+                        {/* Rating overlay */}
+                        <div className="absolute top-2 right-2 flex items-center gap-1 rounded-lg bg-black/60 px-2 py-1 backdrop-blur-sm">
+                          <Star className="size-3 fill-yellow-400 text-yellow-400" />
+                          <span className="text-xs font-bold text-white">
+                            {movie.rating}
+                          </span>
+                        </div>
+                        {/* Hover gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      </div>
+                      <p className="truncate font-bold transition-colors group-hover:text-red-500">
+                        {movie.title}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        {movie.genre} • {movie.year}
+                      </p>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="-left-4 size-10 border-red-500/20 bg-background/80 text-red-500 shadow-lg backdrop-blur-sm hover:bg-red-500 hover:text-white" />
+              <CarouselNext className="-right-4 size-10 border-red-500/20 bg-background/80 text-red-500 shadow-lg backdrop-blur-sm hover:bg-red-500 hover:text-white" />
+            </Carousel>
           </div>
         </section>
       </main>
